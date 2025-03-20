@@ -1,0 +1,19 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  datasource:
+    url: jdbc:postgresql://${PG_HOST:localhost:5435}/task_db
+    username: ${PG_USER:user}
+    password: ${PG_PASSWORD:password}
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO:create-drop}
+
+app:
+  jwt:
+    secret: "someSecretKey"
+    tokenExpiration: 3m
+    refreshTokenExpiration: 30m
